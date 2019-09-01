@@ -1,0 +1,20 @@
+{
+  "name": "@levi/pgn-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pegjs": "pegjs -o src/rules.js src/rules.pegjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levidurfee/pgn-parser.git"
+  },
+  "author": "Levi Durfee <levi.durfee@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/levidurfee/pgn-parser/issues"
+  },
+  "homepage": "https://github.com/levidurfee/pgn-parser#readme"
+}
