@@ -2,16 +2,9 @@
 
 const rules = require('./rules');
 
-module.exports = function parsePGN(pgnString) {
-    const lastHeaderElement = pgnString.lastIndexOf("]\n\n") + 1;
-    const headerString = pgnString.substr(0, lastHeaderElement);
-    const historyString = pgnString.substr(lastHeaderElement);
+module.exports = function parsePGN(pgn) {
+    let strippedPGN = pgn.replace((/  |\t|\r\n|\n|\r/gm),"");
+    let parsedPGN = rules.parse(strippedPGN);
 
-    const strippedPGN = historyString.replace((/  |\t|\r\n|\n|\r/gm), '');
-    const parsedPGN = rules.parse(strippedPGN);
-
-    return {
-        history: parsedPGN[0],
-        header: headerString
-    };
+    return parsedPGN;
 }
