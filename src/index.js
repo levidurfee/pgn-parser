@@ -7,11 +7,11 @@ module.exports = function parsePGN(pgnString) {
     const headerString = pgnString.substr(0, lastHeaderElement);
     const historyString = pgnString.substr(lastHeaderElement);
 
-    //console.log(headerString, historyString);
+    const strippedPGN = historyString.replace((/  |\t|\r\n|\n|\r/gm), '');
+    const parsedPGN = rules.parse(strippedPGN);
 
-    let strippedPGN = historyString.replace((/  |\t|\r\n|\n|\r/gm), " ");
-    //console.log(strippedPGN);
-    let parsedPGN = rules.parse(strippedPGN);
-
-    return parsedPGN;
+    return {
+        history: parsedPGN[0],
+        header: headerString
+    };
 }
