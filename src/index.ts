@@ -24,7 +24,7 @@ export function pgn(pgnString: string): PGN {
     });
 
     let pgn = new PGN(moves);
-    pgn.header = parsedPGN[0];
+    pgn.header = headerString;
 
     return pgn;
 }

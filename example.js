@@ -19,7 +19,7 @@ const pgn = require('./lib/index');
 // 15. h4 Rad8 16. Ng5 Bxg5 17. hxg5 Ne5 18. Qe3 Ng4 19. Qa7 d5 20. Nxd5 Qxe4 21.
 // Qxb7 Qxd5 22. Qxd5 Rxd5 23. c4 Rd4 24. f3 Ne3 25. Kf2 Nxf1 0-1`));
 
-pgn.pgn(`[Event "Live Chess"]
+let g = pgn.pgn(`[Event "Live Chess"]
 [Site "Chess.com"]
 [Date "2019.08.23"]
 [Round "?"]
@@ -68,3 +68,5 @@ pgn.pgn(`[Event "Live Chess"]
     {You found the idea! Great}
 13...Nxf3+ 14.Qxf3 Nd5 15.Qh5+ g6 16.Qxg6# 1-0
 `);
+
+console.log(g);
