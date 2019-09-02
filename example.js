@@ -69,4 +69,4 @@ let g = pgn.pgn(`[Event "Live Chess"]
 13...Nxf3+ 14.Qxf3 Nd5 15.Qh5+ g6 16.Qxg6# 1-0
 `);
 
-console.log(g);
+console.log(g.moves[3]);
