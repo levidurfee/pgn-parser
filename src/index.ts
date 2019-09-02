@@ -19,6 +19,9 @@ export function pgn(pgnString: string): PGN {
         if((typeof mo) != "string") {
             let notation = new Notation(mo.notation.notation, mo.notation.col, mo.notation.row);
             let move = new Move(mo.moveNumber, notation, mo.turn);
+            move.commentAfter = mo.commentAfter;
+            move.commentBefore = mo.commentBefore;
+            move.commentMove = mo.commentMove;
             moves.push(move);
         }
     });
