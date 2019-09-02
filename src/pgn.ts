@@ -34,11 +34,11 @@ export class Move {
 }
 
 export class PGN {
-    history: Array<Move>;
+    moves: Array<Move>;
 
     header?: string;
 
-    constructor(history: Array<Move>) {
-        this.history = history;
+    constructor(moves: Array<Move>) {
+        this.moves = moves;
     }
 }
