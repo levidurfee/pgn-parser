@@ -3,7 +3,7 @@ import { Move } from './move';
 import { Notation } from './notation';
 import { PGN } from './pgn';
 
-const rules: IPEGParser = import('./rules.js');
+const rules: IPEGParser = require('./rules.js');
 
 export function pgn(pgnString: string): PGN {
   const lastHeaderElement = pgnString.lastIndexOf(']\n\n') + 1;
@@ -13,7 +13,7 @@ export function pgn(pgnString: string): PGN {
   const strippedPGN = historyString.replace(/  |\t|\r\n|\n|\r/gm, '');
   const parsedPGN = rules.parse(strippedPGN)[0];
 
-  const moves: Moves[];
+  const moves: Move[] = [];
   parsedPGN.map((mo: any, i: number) => {
     if (typeof mo !== 'string') {
       const notation = new Notation(mo.notation.notation, mo.notation.col, mo.notation.row);

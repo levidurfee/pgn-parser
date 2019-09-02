@@ -1,3 +1,5 @@
+import { Notation } from './notation';
+
 export class Move {
   public moveNumber: number;
   public notation: Notation;

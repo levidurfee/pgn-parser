@@ -1,9 +1,11 @@
+import { Move } from './move';
+
 export class PGN {
-  public moves: Moves[];
+  public moves: Move[];
 
   public header?: string;
 
-  constructor(moves: Moves[]) {
+  constructor(moves: Move[]) {
     this.moves = moves;
   }
 }
