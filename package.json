@@ -6,7 +6,10 @@
   "scripts": {
     "test": "mocha",
     "pegjs": "pegjs -o src/rules.js src/rules.pegjs",
-    "build": "tsc"
+    "build": "tsc",
+
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",

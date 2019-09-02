@@ -1,44 +1,44 @@
 export class Notation {
-    notation: string;
+  public notation: string;
 
-    col?: string;
-    row?: string;
+  public col?: string;
+  public row?: string;
 
-    check?: boolean;
-    fig?: string;
-    promotion?: string;
-    strike?: string;
+  public check?: boolean;
+  public fig?: string;
+  public promotion?: string;
+  public strike?: string;
 
-    constructor(notation: string, col?: string, row?: string) {
-        this.col = col;
-        this.row = row;
-        this.notation = notation;
-    }
+  constructor(notation: string, col?: string, row?: string) {
+    this.col = col;
+    this.row = row;
+    this.notation = notation;
+  }
 }
 
 export class Move {
-    moveNumber: number;
-    notation: Notation;
-    turn: string;
+  public moveNumber: number;
+  public notation: Notation;
+  public turn: string;
 
-    commentAfter?: string;
-    commentBefore?: string;
-    commentMove?: string;
-    nag?: string;
+  public commentAfter?: string;
+  public commentBefore?: string;
+  public commentMove?: string;
+  public nag?: string;
 
-    constructor(moveNumber: number, notation: Notation, turn: string) {
-        this.moveNumber = moveNumber;
-        this.notation = notation;
-        this.turn = turn;
-    }
+  constructor(moveNumber: number, notation: Notation, turn: string) {
+    this.moveNumber = moveNumber;
+    this.notation = notation;
+    this.turn = turn;
+  }
 }
 
 export class PGN {
-    moves: Array<Move>;
+  public moves: Array<Move>;
 
-    header?: string;
+  public header?: string;
 
-    constructor(moves: Array<Move>) {
-        this.moves = moves;
-    }
+  constructor(moves: Array<Move>) {
+    this.moves = moves;
+  }
 }
