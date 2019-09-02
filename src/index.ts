@@ -1,9 +1,9 @@
-import { IPEGParser } from './ipegparser';
 import { Move } from './move';
 import { Notation } from './notation';
 import { PGN } from './pgn';
 
-const rules: IPEGParser = require('./rules.js');
+// tslint:disable-next-line
+const rules = require('./rules.js');
 
 export function pgn(pgnString: string): PGN {
   const lastHeaderElement = pgnString.lastIndexOf(']\n\n') + 1;
