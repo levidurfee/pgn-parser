@@ -1,10 +1,9 @@
-import { Move, Notation, PGN } from './pgn';
+import { IPEGParser } from './ipegparser';
+import { Move } from './move';
+import { Notation } from './notation';
+import { PGN } from './pgn';
 
-interface IPEGParser {
-  parse(input: string): any;
-}
-
-const rules: IPEGParser = require('./rules.js');
+const rules: IPEGParser = import('./rules.js');
 
 export function pgn(pgnString: string): PGN {
   const lastHeaderElement = pgnString.lastIndexOf(']\n\n') + 1;
@@ -14,7 +13,7 @@ export function pgn(pgnString: string): PGN {
   const strippedPGN = historyString.replace(/  |\t|\r\n|\n|\r/gm, '');
   const parsedPGN = rules.parse(strippedPGN)[0];
 
-  const moves: Array<Move> = [];
+  const moves: Moves[];
   parsedPGN.map((mo: any, i: number) => {
     if (typeof mo !== 'string') {
       const notation = new Notation(mo.notation.notation, mo.notation.col, mo.notation.row);
@@ -26,8 +25,8 @@ export function pgn(pgnString: string): PGN {
     }
   });
 
-  let pgn = new PGN(moves);
-  pgn.header = headerString;
+  const pgnObject = new PGN(moves);
+  pgnObject.header = headerString;
 
-  return pgn;
+  return pgnObject;
 }
