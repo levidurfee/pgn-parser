@@ -28,7 +28,7 @@
   "homepage": "https://github.com/levidurfee/pgn-parser#readme",
   "devDependencies": {
     "@types/node": "^12.7.3",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "prettier": "^1.18.2",
     "tslint": "^5.19.0",
     "tslint-config-prettier": "^1.18.0",
